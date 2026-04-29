@@ -9,4 +9,11 @@ wheels/
 # Virtual environments
 .venv
 
-**/data
+# Ignore everything inside any "data" directory
+**/data/**/*
+
+# Unignore all sub-directories inside "data" (so git can traverse them)
+!**/data/**/
+
+# Unignore CSV files anywhere under data
+!**/data/**/*.csv
