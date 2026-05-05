@@ -26,6 +26,7 @@ dependencies = [
     "safetensors>=0.7.0",
     "sam-audio",
     "scipy==1.15.2",
+    "seaborn>=0.13.2",
     "soundfile>=0.13.1",
     "tokenizers==0.21.1",
     "torch>=2.11.0",
