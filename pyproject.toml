@@ -3,11 +3,42 @@ name = "turkish-instrument"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.11"
 dependencies = [
+    "audiobox-aesthetics>=0.0.4",
+    "dacvae",
+    "datasets>=2.20.0",
+    "einops>=0.8.2",
+    "ffmpeg>=1.4",
+    "hf-transfer>=0.1.9",
+    "huggingface-hub==0.35.1",
+    "imagebind",
     "ipykernel>=7.2.0",
+    "laion-clap",
     "librosa>=0.11.0",
-    "pandas>=3.0.2",
+    "matplotlib>=3.10.9",
+    "numpy==1.26.4",
+    "pandas>=2.3.3",
+    "perception-models",
+    "pydub>=0.25.1",
+    "python-dotenv>=1.2.2",
+    "regex>=2026.4.4",
+    "safetensors>=0.7.0",
+    "sam-audio",
+    "scipy==1.15.2",
     "soundfile>=0.13.1",
+    "tokenizers==0.21.1",
+    "torch>=2.11.0",
+    "torchaudio>=2.11.0",
+    "torchcodec>=0.11.1",
+    "torchdiffeq>=0.2.5",
+    "torchvision>=0.26.0",
     "yt-dlp>=2026.3.17",
 ]
+
+[tool.uv.sources]
+laion-clap = { git = "https://github.com/lematt1991/CLAP.git" }
+dacvae = { git = "https://github.com/facebookresearch/dacvae.git" }
+imagebind = { git = "https://github.com/facebookresearch/ImageBind.git" }
+sam-audio = { git = "https://github.com/facebookresearch/sam-audio.git" }
+perception-models = { git = "https://github.com/facebookresearch/perception_models", rev = "unpin-deps" }

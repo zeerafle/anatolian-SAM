@@ -17,3 +17,6 @@ wheels/
 
 # Unignore CSV files anywhere under data
 !**/data/**/*.csv
+
+.env
+**/.checkpoints/
