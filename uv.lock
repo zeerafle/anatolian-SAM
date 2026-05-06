@@ -5000,7 +5000,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "audiobox-aesthetics", specifier = ">=0.0.4" },
-    { name = "dacvae", git = "https://github.com/facebookresearch/dacvae.git" },
+    { name = "dacvae", git = "https://github.com/facebookresearch/dacvae" },
     { name = "datasets", specifier = ">=2.20.0" },
     { name = "einops", specifier = ">=0.8.2" },
     { name = "ffmpeg", specifier = ">=1.4" },
