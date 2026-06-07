@@ -1,0 +1,6 @@
+outs:
+- md5: 8a4af8d6cfc1b7d41098f2479b083e54.dir
+  size: 9637370
+  nfiles: 6
+  hash: md5
+  path: soundfonts

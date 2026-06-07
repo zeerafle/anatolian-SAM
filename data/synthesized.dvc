@@ -1,0 +1,6 @@
+outs:
+- md5: 7a68e0dedf079107bcb3c610be0f440a.dir
+  size: 980555780
+  nfiles: 35
+  hash: md5
+  path: synthesized
