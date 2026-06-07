@@ -1,0 +1,6 @@
+outs:
+- md5: 79eb14cd507619f31c1936a79e0bcbcf.dir
+  size: 6047585
+  nfiles: 180
+  hash: md5
+  path: latents

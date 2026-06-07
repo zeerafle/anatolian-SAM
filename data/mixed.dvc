@@ -1,0 +1,6 @@
+outs:
+- md5: ed71129d356adc7a983a562f7b1e2cb8.dir
+  size: 13453184
+  nfiles: 61
+  hash: md5
+  path: mixed
