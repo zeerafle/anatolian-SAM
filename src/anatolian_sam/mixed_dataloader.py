@@ -54,7 +54,9 @@ class TurkishMusicMixedAudioDataset(Dataset):
         return {
             "prompt": row["prompt"],
             "mixture_wav": mixture_wav,
-            "target_wav": target_wav
+            "target_wav": target_wav,
+            "mixture_filename": mixture_filename,
+            "target_filename": target_filename
         }
 
 def get_audio_dataloader(jsonl_path, data_base_path, target_sr, batch_size=4, shuffle=False, num_workers=2):
@@ -64,15 +66,25 @@ def get_audio_dataloader(jsonl_path, data_base_path, target_sr, batch_size=4, sh
     dataset = TurkishMusicMixedAudioDataset(jsonl_path, data_base_path, target_sr)
 
     def custom_collate(batch):
-        # The SAM-Audio processor expects lists of tensors/arrays
         prompts = [item["prompt"] for item in batch]
-        mixture_wavs = [item["mixture_wav"] for item in batch]
-        target_wavs = [item["target_wav"] for item in batch]
+        mixture_filenames = [item["mixture_filename"] for item in batch]
+        target_filenames = [item["target_filename"] for item in batch]
+
+        # Extract wavs. Original shape is [1, T].
+        # pad_sequence expects [T, C], so we transpose before padding.
+        mix_wavs_t = [item["mixture_wav"].transpose(0, 1) for item in batch]
+        tgt_wavs_t = [item["target_wav"].transpose(0, 1) for item in batch]
+
+        # Pad sequences to the longest in the batch, then transpose back to [B, 1, T]
+        mixture_padded = torch.nn.utils.rnn.pad_sequence(mix_wavs_t, batch_first=True).transpose(1, 2)
+        target_padded = torch.nn.utils.rnn.pad_sequence(tgt_wavs_t, batch_first=True).transpose(1, 2)
 
         return {
             "prompts": prompts,
-            "mixture_wavs": mixture_wavs,
-            "target_wavs": target_wavs
+            "mixture_wavs": mixture_padded, # Now a proper tensor of shape [B, 1, T]
+            "target_wavs": target_padded,
+            "mixture_filenames": mixture_filenames,
+            "target_filenames": target_filenames
         }
 
     loader = DataLoader(
