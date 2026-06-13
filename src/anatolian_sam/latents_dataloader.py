@@ -67,11 +67,14 @@ def pad_collate_fn(batch):
     padded_text_feats = pad_sequence(text_feats, batch_first=True, padding_value=0.0)
     padded_text_masks = pad_sequence(text_masks, batch_first=True, padding_value=0)
 
+    target_filename = [item["target_filename"] for item in batch]
+
     return {
         "mixture_latent": mixture_latents,
         "target_latent": target_latents,
         "text_features": padded_text_feats,
         "text_mask": padded_text_masks,
+        "target_filename": target_filename,
     }
 
 
