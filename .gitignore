@@ -11,6 +11,6 @@ wheels/
 
 .env
 **/.checkpoints/
+checkpoints
 
-notebooks/turkish_validation_stems
-notebooks/turkish_sam_audio_lora
+wandb/
