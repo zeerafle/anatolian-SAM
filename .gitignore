@@ -16,3 +16,5 @@ checkpoints
 wandb/
 
 evaluations
+
+data/MUSDB18
