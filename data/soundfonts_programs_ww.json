@@ -1,0 +1,41 @@
+{
+    "soundfonts": [
+        {
+            "name": "steel_string_guitar",
+            "filename": "FSS-SteelStringGuitar-small-20200521.sf2",
+            "description": "Steel-String Acoustic Guitar soundfont, the Plucked Lute (Metal Strings) class",
+            "program": "000"
+        },
+        {
+            "name": "harp",
+            "filename": "ConcertHarp-small-20200702.sf2",
+            "description": "Orchestral Harp soundfont, the Plucked Zither class",
+            "program": "000"
+        },
+        {
+            "name": "recorder",
+            "filename": "Recorder-20201205.sf2",
+            "description": "Recorder soundfont, the Woodwind (End-blown Flute) class",
+            "program": "000"
+        },
+        {
+            "name": "synth_strings",
+            "filename": "SynthStrings1 20200528.sf2",
+            "description": "Synth Strings 1 soundfont, the Bowed Strings envelope class",
+            "program": "000"
+        },
+        {
+            "name": "nylon_guitar",
+            "filename": "SpanishClassicalGuitar-20190618.sf2",
+            "description": "Nylon-String Acoustic Guitar soundfont, The Plucked Lute (Nylon/Gut Strings) class",
+            "program": "000"
+        },
+        {
+            "name": "bagpipes",
+            "filename": "Bagpipe-small-20221204.sf2",
+            "description": "Bagpipe soundfont, The Double-Reed (Aerophone) class",
+            "program": "000"
+        }
+    ],
+    "source": "https://freepats.zenvoid.org/"
+}
