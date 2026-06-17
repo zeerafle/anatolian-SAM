@@ -18,3 +18,5 @@ wandb/
 evaluations
 
 data/MUSDB18
+
+notebooks/turkish_*
