@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 from scipy.stats import wasserstein_distance
+from torchmetrics.audio import ScaleInvariantSignalDistortionRatio
 
 
 def hz_to_cents(f_hz, f_ref=440.0):
@@ -98,3 +99,11 @@ def compute_emd_metrics(audio_gt, audio_zs, audio_lora, sr):
     )
 
     return emd_zs, emd_lora, (cents_gt, cents_zs, cents_lora)
+
+
+def compute_si_sdr(y_gt, y_zs, y_lora, device):
+    si_sdr_metric = ScaleInvariantSignalDistortionRatio().to(device)
+    zs_score = si_sdr_metric(y_zs, y_gt)
+    lora_score = si_sdr_metric(y_lora, y_gt)
+
+    return zs_score.item(), lora_score.item()
